@@ -1,4 +1,3 @@
-⭐ FINAL PROFESSIONAL README.md (Copy–Paste Entire File)
 # 📦 Supply Chain Analytics Project (End-to-End)
 
 An end-to-end data analytics solution built for the **Daxwell Data Analyst Assessment**, showcasing skills in:
@@ -18,52 +17,52 @@ This project simulates a real supply-chain environment involving **orders, inven
 
 
 
-supply-chain-analytics-end-to-end/
-│
-├── data/
-│ ├── raw/ # Raw datasets generated via Python
-│ ├── processed/ # Cleaned datasets produced by ETL pipeline
-│ └── dictionary/ # Data dictionary for all features
-│
-├── pipeline/
-│ ├── extract.py
-│ ├── transform.py
-│ ├── load.py
-│ ├── run_pipeline.py # Orchestrates the ETL steps
-│ └── config.yaml
-│
-├── sql/
-│ ├── 01_create_tables.sql
-│ ├── 02_cleaning_queries.sql
-│ ├── 03_kpi_queries.sql
-│ ├── 04_supplier_scorecard.sql
-│ └── 05_inventory_performance.sql
-│
-├── notebooks/
-│ ├── EDA_Inventory.ipynb
-│ ├── EDA_Orders.ipynb
-│ └── KPI_Analysis.ipynb
-│
-├── dashboard/powerbi/
-│ ├── supply_chain_dashboard.pbix
-│ └── screenshots/
-│ ├── full_executive_overview_page.png
-│ ├── kpi_card_section.png
-│ ├── revenue_trend.png
-│ ├── inventory_status_pie.png
-│ ├── full_orders_revenue_page.png
-│ ├── daily_orders_trend.png
-│ ├── revenue_by_region.png
-│ └── top_skus_bar.png
-│
-├── visuals/
-│ └── charts_from_notebook/
-│
-├── visuals/architecture/
-│
-├── README.md
-└── requirements.txt
+## 🧱 Project Architecture
 
+### 📁 data/
+- **raw/** — Raw datasets generated via Python  
+- **processed/** — Cleaned datasets produced by the ETL pipeline  
+- **dictionary/** — Data dictionary for all columns  
+
+### 📁 pipeline/
+- `extract.py` — Reads/generates raw data  
+- `transform.py` — Cleans, transforms, creates KPIs  
+- `load.py` — Saves processed datasets  
+- `run_pipeline.py` — Orchestrates the ETL sequence  
+- `config.yaml` — Parameter configuration  
+
+### 📁 sql/
+- `01_create_tables.sql` — Table schema setup  
+- `02_cleaning_queries.sql` — SQL-level cleaning  
+- `03_kpi_queries.sql` — KPI definitions  
+- `04_supplier_scorecard.sql` — Supplier scoring logic  
+- `05_inventory_performance.sql` — Inventory insights  
+
+### 📁 notebooks/
+- `EDA_Inventory.ipynb` — Inventory analysis  
+- `EDA_Orders.ipynb` — Order trends & revenue  
+- `KPI_Analysis.ipynb` — KPI deep dive  
+
+### 📁 dashboard/powerbi/
+- `supply_chain_dashboard.pbix` — Power BI report  
+- **screenshots/**  
+  - full_executive_overview_page.png  
+  - kpi_card_section.png  
+  - revenue_trend.png  
+  - inventory_status_pie.png  
+  - full_orders_revenue_page.png  
+  - daily_orders_trend.png  
+  - revenue_by_region.png  
+  - top_skus_bar.png  
+
+### 📁 visuals/
+- **charts_from_notebook/** — All EDA visuals  
+- **architecture/** — Mermaid diagrams (optional)  
+
+### 📄 Other Files
+- `README.md` — Full project documentation  
+- `requirements.txt` — Python dependencies  
+- `LICENSE` — MIT license  
 
 
 # 📦 1. Dataset Overview
