@@ -12,7 +12,7 @@ An end-to-end data analytics solution built for the **Daxwell Data Analyst Asses
 
 This project simulates a real supply-chain environment involving **orders, inventory, shipments, and supplier performance**.
 
----
+
 
 # 🧱 Project Architecture
 
@@ -56,19 +56,22 @@ supply-chain-analytics-end-to-end/
 │ ├── revenue_by_region.png
 │ └── top_skus_bar.png
 │
-├── visuals/architecture/ # Pipeline/Model diagrams
+├── visuals/
+│ └── charts_from_notebook/
+│
+├── visuals/architecture/
 │
 ├── README.md
 └── requirements.txt
 
 
----
 
 # 📦 1. Dataset Overview
 
 The project includes **four primary datasets (10k–50k rows each)**:
 
----
+
+
 
 ## **📌 orders_clean.csv**
 Contains order and shipping details:
@@ -81,7 +84,7 @@ Contains order and shipping details:
 - shipping_delay_days  
 - is_completed, is_cancelled, is_returned  
 
----
+
 
 ## **📌 inventory_clean.csv**
 SKU-level inventory:
@@ -92,7 +95,7 @@ SKU-level inventory:
 - lead_time_days  
 - inventory_status  
 
----
+
 
 ## **📌 shipments_clean.csv**
 Shipment performance & delivery reliability:
@@ -106,7 +109,7 @@ Shipment performance & delivery reliability:
 - delivered_on_time_flag  
 - carrier  
 
----
+
 
 ## **📌 suppliers_clean.csv**
 Supplier metadata:
@@ -119,7 +122,7 @@ Supplier metadata:
 
 _All raw datasets were generated using Python to simulate realistic supply chain operations._
 
----
+
 
 # ⚙️ 2. ETL Pipeline
 
@@ -142,7 +145,7 @@ Exports cleaned datasets to `/processed`.
 ### 🔹 **run_pipeline.py**
 Runs the full ETL workflow using **config.yaml**.
 
----
+
 
 # 📊 3. Exploratory Data Analysis (EDA)
 
@@ -173,7 +176,7 @@ All visuals generated during EDA are stored in:
 visuals/charts_from_notebook/
 
 
----
+
 
 # 🗂 4. SQL Modeling
 
@@ -187,13 +190,13 @@ SQL scripts include:
 
 These scripts simulate how analytics engineers transform production data for BI systems.
 
----
+
 
 # 📊 5. Power BI Dashboard
 
 The final dashboard contains two pages, designed for both **executives** and **supply-chain analysts**.
 
----
+
 
 # ⭐ PAGE 1 — Executive Overview
 
@@ -212,7 +215,7 @@ The final dashboard contains two pages, designed for both **executives** and **s
 ### Screenshot:
 ![Executive Overview](dashboard/powerbi/screenshots/full_executive_overview_page.png)
 
----
+
 
 # ⭐ PAGE 2 — Orders & Revenue Analytics
 
@@ -225,7 +228,7 @@ The final dashboard contains two pages, designed for both **executives** and **s
 ### Screenshot:
 ![Orders & Revenue](dashboard/powerbi/screenshots/full_orders_revenue_page.png)
 
----
+
 
 # 💡 6. Key Business Insights
 
@@ -247,22 +250,9 @@ The final dashboard contains two pages, designed for both **executives** and **s
 
 These insights support improvements in logistics, inventory planning, and vendor management.
 
----
 
-# ▶️ 7. Video Walkthrough
 
-A 5–10 minute video (to be added) will demonstrate:
-
-- ETL pipeline  
-- EDA exploration  
-- Power BI dashboard  
-- Business insights  
-
-**📌 Link will be added here after recording.**
-
----
-
-# 🛠 8. How to Run the Project
+# 🛠 7. How to Run the Project
 
 ### **Install dependencies**
 
@@ -284,9 +274,9 @@ Open:
 dashboard/powerbi/supply_chain_dashboard.pbix
 
 
----
 
-# 🧑‍🏫 9. Skills Demonstrated
+
+# 🧑‍🏫 8. Skills Demonstrated
 
 - Python (pandas, numpy)  
 - SQL (analytics, KPI modeling)  
@@ -298,8 +288,8 @@ dashboard/powerbi/supply_chain_dashboard.pbix
 - Supply Chain Analytics  
 - Business Storytelling  
 
----
 
-# ✔️ 10. Author
+
+# ✔️ 9. Author
 
 **Saicharan Veldurthy**  
