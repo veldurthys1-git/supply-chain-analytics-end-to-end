@@ -1,329 +1,305 @@
-Supply Chain Analytics Project
+⭐ FINAL PROFESSIONAL README.md (Copy–Paste Entire File)
+# 📦 Supply Chain Analytics Project (End-to-End)
 
-An end-to-end data analytics solution built for the Daxwell Data Analyst assessment, showcasing skills in:
+An end-to-end data analytics solution built for the **Daxwell Data Analyst Assessment**, showcasing skills in:
 
-Data Engineering (ETL)
+- **Data Engineering (ETL)**
+- **Data Cleaning & Transformation**
+- **SQL Modeling**
+- **Exploratory Data Analysis (EDA)**
+- **Dashboard Development (Power BI)**
+- **Supply Chain Insights & KPI Reporting**
 
-Data Cleaning & Transformation
+This project simulates a real supply-chain environment involving **orders, inventory, shipments, and supplier performance**.
 
-SQL Modeling
+---
 
-Exploratory Data Analysis (EDA)
+# 🧱 Project Architecture
 
-Dashboard Development (Power BI)
 
-Supply Chain Insights & KPI Reporting
 
-This project simulates a real supply-chain environment involving orders, inventory, shipments, and supplier performance.
-
-🧱 Project Architecture
-DAXWELL-SUPPLYCHAIN-ANALYTICS
+supply-chain-analytics-end-to-end/
 │
-├── data
-│   ├── raw/                # Raw datasets generated via Python
-│   ├── processed/          # Cleaned datasets produced by ETL pipeline
-│   └── dictionary/         # Data dictionary for all features
+├── data/
+│ ├── raw/ # Raw datasets generated via Python
+│ ├── processed/ # Cleaned datasets produced by ETL pipeline
+│ └── dictionary/ # Data dictionary for all features
 │
 ├── pipeline/
-│   ├── extract.py
-│   ├── transform.py
-│   ├── load.py
-│   ├── run_pipeline.py     # Orchestrates the ETL steps
-│   └── config.yaml
+│ ├── extract.py
+│ ├── transform.py
+│ ├── load.py
+│ ├── run_pipeline.py # Orchestrates the ETL steps
+│ └── config.yaml
 │
 ├── sql/
-│   ├── 01_create_tables.sql
-│   ├── 02_cleaning_queries.sql
-│   ├── 03_kpi_queries.sql
-│   ├── 04_supplier_scorecard.sql
-│   └── 05_inventory_performance.sql
+│ ├── 01_create_tables.sql
+│ ├── 02_cleaning_queries.sql
+│ ├── 03_kpi_queries.sql
+│ ├── 04_supplier_scorecard.sql
+│ └── 05_inventory_performance.sql
 │
 ├── notebooks/
-│   ├── EDA_Inventory.ipynb
-│   ├── EDA_Orders.ipynb
-│   ├── KPI_Analysis.ipynb
+│ ├── EDA_Inventory.ipynb
+│ ├── EDA_Orders.ipynb
+│ └── KPI_Analysis.ipynb
 │
 ├── dashboard/powerbi/
-│   ├── supply_chain_dashboard.pbix
-│   └── screenshots/
-│       ├── executive_overview.png
-│       ├── kpi_cards.png
-│       ├── revenue_trend.png
-│       ├── inventory_status_pie.png
-│       ├── orders_revenue_page.png
-│       ├── orders_trend.png
-│       ├── revenue_by_region.png
-│       ├── top_skus.png
+│ ├── supply_chain_dashboard.pbix
+│ └── screenshots/
+│ ├── full_executive_overview_page.png
+│ ├── kpi_card_section.png
+│ ├── revenue_trend.png
+│ ├── inventory_status_pie.png
+│ ├── full_orders_revenue_page.png
+│ ├── daily_orders_trend.png
+│ ├── revenue_by_region.png
+│ └── top_skus_bar.png
 │
-├── visuals/architecture/   # Pipeline/Model diagrams
+├── visuals/architecture/ # Pipeline/Model diagrams
+│
 ├── README.md
 └── requirements.txt
 
-📦 1. Dataset Overview
 
-The project includes four primary datasets (10k–50k rows each):
+---
 
-📌 orders_clean.csv
+# 📦 1. Dataset Overview
 
-order_id, order_date
+The project includes **four primary datasets (10k–50k rows each)**:
 
-customer_region
+---
 
-sku
+## **📌 orders_clean.csv**
+Contains order and shipping details:
 
-order_value
+- order_id, order_date  
+- customer_region  
+- sku  
+- order_value  
+- priority_flag  
+- shipping_delay_days  
+- is_completed, is_cancelled, is_returned  
 
-priority_flag
+---
 
-shipping_delay_days
+## **📌 inventory_clean.csv**
+SKU-level inventory:
 
-is_completed, is_cancelled, is_returned
+- sku, supplier_id  
+- inventory_level  
+- reorder_point, reorder_qty  
+- lead_time_days  
+- inventory_status  
 
-📌 inventory_clean.csv
+---
 
-sku, supplier_id
+## **📌 shipments_clean.csv**
+Shipment performance & delivery reliability:
 
-inventory_level
+- order_id  
+- shipment_id  
+- actual_delivery_date  
+- expected_delivery_date  
+- delivery_delay_days  
+- is_delivered, is_delayed  
+- delivered_on_time_flag  
+- carrier  
 
-reorder_point
+---
 
-reorder_qty
+## **📌 suppliers_clean.csv**
+Supplier metadata:
 
-lead_time_days
+- supplier_id  
+- supplier_name  
+- region  
+- reliability_score  
+- avg_lead_time_days  
 
-inventory_status
+_All raw datasets were generated using Python to simulate realistic supply chain operations._
 
-📌 shipments_clean.csv
+---
 
-order_id
-
-shipment_id
-
-actual_delivery_date
-
-expected_delivery_date
-
-delivery_delay_days
-
-is_delivered, is_delayed
-
-delivered_on_time_flag
-
-carrier
-
-📌 suppliers_clean.csv
-
-supplier_id
-
-supplier_name
-
-region
-
-reliability_score
-
-avg_lead_time_days
-
-All raw datasets were generated using Python to simulate realistic supply chain operations.
-
-⚙️ 2. ETL Pipeline
+# ⚙️ 2. ETL Pipeline
 
 The ETL pipeline includes:
 
-🔹 extract.py
-
+### 🔹 **extract.py**
 Loads raw CSV files into pandas DataFrames.
 
-🔹 transform.py
-
+### 🔹 **transform.py**
 Cleans data and applies transformations:
 
-Standardizing date formats
+- Standardizing date formats  
+- Deriving KPI flags (OTIF, delay)  
+- Inventory risk scoring  
+- Feature creation  
 
-Deriving flags (OTIF, delay)
+### 🔹 **load.py**
+Exports cleaned datasets to `/processed`.
 
-Inventory risk scoring
+### 🔹 **run_pipeline.py**
+Runs the full ETL workflow using **config.yaml**.
 
-KPI feature creation
+---
 
-🔹 load.py
+# 📊 3. Exploratory Data Analysis (EDA)
 
-Exports cleaned datasets to /processed.
+Performed using **Jupyter notebooks**.
 
-🔹 run_pipeline.py
+### **📌 EDA_Inventory.ipynb**
+- Inventory levels  
+- Status distribution  
+- Days of cover  
+- SKU risk segmentation  
 
-Runs the full ETL workflow using config.yaml.
+### **📌 EDA_Orders.ipynb**
+- Daily order volume  
+- Revenue patterns  
+- Cancellation trends  
+- Region performance  
 
-📊 3. Exploratory Data Analysis (EDA)
+### **📌 KPI_Analysis.ipynb**
+- OTIF %  
+- Delivery delays  
+- Supplier reliability  
+- High-risk SKU identification  
 
-Performed using Jupyter notebooks:
+All visuals generated during EDA are stored in:
 
-📌 EDA_Inventory
 
-Inventory levels over time
 
-Status distribution
+visuals/charts_from_notebook/
 
-Days of cover
 
-Risk segmentation
+---
 
-📌 EDA_Orders
-
-Daily order volume
-
-Revenue patterns
-
-Cancellation trends
-
-Region performance
-
-📌 KPI_Analysis
-
-OTIF %
-
-Delivery delays
-
-Supplier reliability
-
-High-risk SKU identification
-
-Screenshots of EDA visuals are included in the visuals/charts_from_notebook/ folder.
-
-🗂 4. SQL Modeling
+# 🗂 4. SQL Modeling
 
 SQL scripts include:
 
-Table creation
+- Table creation  
+- Cleaning & standardization  
+- KPI calculations  
+- Supplier performance scorecard  
+- Inventory performance model  
 
-Cleaning & standardization
+These scripts simulate how analytics engineers transform production data for BI systems.
 
-KPI calculations
+---
 
-Supplier performance scorecard
+# 📊 5. Power BI Dashboard
 
-Inventory performance model
+The final dashboard contains two pages, designed for both **executives** and **supply-chain analysts**.
 
-These scripts simulate how a real analytics engineer prepares production data for BI tools.
+---
 
-📊 5. Power BI Dashboard
+# ⭐ PAGE 1 — Executive Overview
 
-The final dashboard has two pages, designed for executives and supply-chain analysts.
+### KPIs:
+- Total Revenue  
+- Total Orders  
+- OTIF %  
+- Avg Delivery Delay  
+- High Risk Inventory %  
 
-⭐ PAGE 1 — Executive Overview
-KPIs:
+### Visuals:
+- Daily Revenue Trend  
+- Inventory Status Distribution  
+- Filters (Date, Region, SKU, Supplier)  
 
-Total Revenue
+### Screenshot:
+![Executive Overview](dashboard/powerbi/screenshots/full_executive_overview_page.png)
 
-Total Orders
+---
 
-OTIF %
+# ⭐ PAGE 2 — Orders & Revenue Analytics
 
-Avg Delivery Delay
+### Visuals:
+- Daily Orders Trend  
+- Revenue by Region  
+- Order Priority Mix  
+- Top 10 SKUs by Revenue  
 
-High Risk Inventory %
+### Screenshot:
+![Orders & Revenue](dashboard/powerbi/screenshots/full_orders_revenue_page.png)
 
-Visuals:
+---
 
-📈 Daily Revenue Trend
+# 💡 6. Key Business Insights
 
-🥧 Inventory Status Distribution
+### **📌 Revenue**
+- Strong revenue performance (~$56M+ total).  
+- Midwest region shows highest contribution.  
 
-🔍 Slicers: Date, Region, SKU, Supplier
+### **📌 Orders**
+- Daily volume stable (240–300 orders/day).  
+- Priority orders < 5%.  
 
-Screenshot:
+### **📌 Inventory**
+- ~80% Healthy inventory.  
+- ~8% Critical/Low → potential stockout risk.  
 
-dashboard/powerbi/screenshots/Full Executive Overview page.png
+### **📌 Shipments & OTIF**
+- OTIF ~50% → opportunity for improvement.  
+- Average delivery delay: **1.1 days**.  
 
-⭐ PAGE 2 — Orders & Revenue Analytics
-Visuals:
+These insights support improvements in logistics, inventory planning, and vendor management.
 
-📈 Daily Orders Trend
+---
 
-📊 Revenue by Region
+# ▶️ 7. Video Walkthrough
 
-🥯 Order Priority Mix
+A 5–10 minute video (to be added) will demonstrate:
 
-📊 Top 10 SKUs by Revenue
+- ETL pipeline  
+- EDA exploration  
+- Power BI dashboard  
+- Business insights  
 
-Screenshot:
+**📌 Link will be added here after recording.**
 
-dashboard/powerbi/screenshots/Full Orders & Revenue page.png
+---
 
-💡 6. Key Business Insights
-📌 Revenue
+# 🛠 8. How to Run the Project
 
-Strong daily revenue performance (~$56M+ total).
+### **Install dependencies**
 
-Regional revenue concentration with variations in Northeast/Midwest.
 
-📌 Orders
-
-Daily orders vary between 240–300, indicating stable demand.
-
-Priority orders represent < 5%, suggesting efficient planning.
-
-📌 Inventory
-
-Majority of inventory is Healthy (>80%).
-
-~8% at critical or low levels → requires monitoring.
-
-📌 Shipments & OTIF
-
-~50% OTIF → indicates room for improvement.
-
-Average delivery delay: 1.1 days.
-
-These insights help optimize planning, supplier engagement, and logistics.
-
-▶️ 7. Video Walkthrough
-
-A 5–10 minute video demonstrates:
-
-ETL pipeline
-
-EDA exploration
-
-Power BI dashboard
-
-Business insights
-
-📌 Link will be added here after recording.
-
-🛠 8. How to Run the Project
-Install dependencies
 pip install -r requirements.txt
 
-Run ETL pipeline
+
+### **Run ETL pipeline**
+
+
 python pipeline/run_pipeline.py
 
-Open Power BI dashboard
 
-Open file:
+### **Open Power BI dashboard**
+
+Open:
+
 
 dashboard/powerbi/supply_chain_dashboard.pbix
 
-🧑‍🏫 9. Skills Demonstrated
 
-Python (pandas, numpy)
+---
 
-SQL (analytics, modeling, KPI design)
+# 🧑‍🏫 9. Skills Demonstrated
 
-Data Cleaning & Feature Engineering
+- Python (pandas, numpy)  
+- SQL (analytics, KPI modeling)  
+- Data Cleaning & Feature Engineering  
+- ETL Pipeline Development  
+- Exploratory Data Analysis  
+- DAX Measures  
+- Power BI Dashboard Design  
+- Supply Chain Analytics  
+- Business Storytelling  
 
-ETL Pipeline Engineering
+---
 
-Exploratory Data Analysis
+# ✔️ 10. Author
 
-DAX Measures
-
-Power BI Dashboard Design
-
-Supply Chain Analytics
-
-Business Storytelling
-
-✔️ 10. Author
-
-Saicharan Veldurthy
-Daxwell Data Analyst Assessment — 2024
+**Saicharan Veldurthy**  
