@@ -1,0 +1,11 @@
+raw_data:
+  inventory: "data/raw/inventory_raw.csv"
+  orders: "data/raw/orders_raw.csv"
+  shipments: "data/raw/shipments_raw.csv"
+  suppliers: "data/raw/suppliers_raw.csv"
+
+processed_data:
+  inventory: "data/processed/inventory_clean.csv"
+  orders: "data/processed/orders_clean.csv"
+  shipments: "data/processed/shipments_clean.csv"
+  suppliers: "data/processed/suppliers_clean.csv"
