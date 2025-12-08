@@ -13,10 +13,6 @@ This project simulates a real supply-chain environment involving **orders, inven
 
 
 
-# 🧱 Project Architecture
-
-
-
 ## 🧱 Project Architecture
 
 ### 📁 data/
