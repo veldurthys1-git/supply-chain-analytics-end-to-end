@@ -4,7 +4,7 @@ This document describes the structure, purpose, and interpretation of the **Powe
 
 The dashboard is designed as a **two-page interactive report** focused on supply chain performance, order behavior, and revenue insights.
 
----
+
 
 # ⭐ PAGE 1 — Executive Overview
 
@@ -18,7 +18,7 @@ This page provides a **high-level summary** of operational and supply chain perf
 
 This summary is ideal for **daily or weekly business reviews.**
 
----
+
 
 ## 📌 KPI Cards (Top Row)
 
@@ -32,7 +32,7 @@ This summary is ideal for **daily or weekly business reviews.**
 
 These KPIs provide an immediate snapshot of operational health.
 
----
+
 
 ## 📈 Daily Revenue Trend (Line Chart)
 
@@ -47,7 +47,7 @@ Shows how revenue changes over time, highlighting:
 - Apply filters (date, region, SKU, supplier) to identify performance drivers.  
 - Detect sudden demand shifts or operational issues.  
 
----
+
 
 ## 🥧 Inventory Status Distribution (Pie Chart)
 
@@ -64,7 +64,7 @@ Categories include:
 - Quickly identify inventory risk levels.  
 - Support replenishment and procurement planning.  
 
----
+
 
 ## 🎚️ Slicers (Filters)
 
@@ -77,7 +77,7 @@ Categories include:
 
 These slicers enhance **interactivity** and enable quick root-cause analysis.
 
----
+
 
 # ⭐ PAGE 2 — Orders & Revenue Analytics
 
@@ -91,7 +91,7 @@ It is ideal for:
 - Customer segmentation  
 - Operational workload planning  
 
----
+
 
 ## 📈 Daily Orders Trend (Line Chart)
 
@@ -103,7 +103,7 @@ Shows how order volume changes daily.
 - Capacity planning  
 - Order cycle understanding  
 
----
+
 
 ## 📊 Revenue by Region (Bar Chart)
 
@@ -114,7 +114,7 @@ Breaks down total revenue by customer region to identify:
 - Underperforming zones  
 - Sales concentration patterns  
 
----
+
 
 ## 🥯 Order Priority Mix (Donut Chart)
 
@@ -132,7 +132,7 @@ High-priority orders may indicate:
 - Fulfillment escalations  
 - Short-term demand changes  
 
----
+
 
 ## 📦 Top 10 SKUs by Revenue (Bar Chart)
 
@@ -147,7 +147,7 @@ Identifies the highest revenue-generating SKUs.
 
 This is one of the **most insightful visuals** for analysts.
 
----
+
 
 # 🧭 Dashboard Design Philosophy
 
@@ -169,7 +169,7 @@ The dashboard flows from:
 ### ✔ **Scalability**
 Can expand into supplier scorecards, logistics dashboards, forecasting pages, etc.
 
----
+
 
 # 🚀 Business Value Delivered
 
@@ -183,7 +183,7 @@ This dashboard helps Daxwell:
 - ✔ Improve OTIF performance  
 - ✔ Detect operational inefficiencies  
 
----
+
 
 # 🎯 Next Steps (Optional Enhancements)
 
@@ -195,7 +195,7 @@ Potential extensions include:
 - Cost-to-Serve Analysis  
 - Multi-page executive overview  
 
----
+
 
 # 👤 Author
 
